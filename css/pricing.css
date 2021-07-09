@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+/* header*/
+header {
+    background: url(../images/bg-pattern.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 350px;
+}
+header .head {
+    background: url(../images/pattern-circles.svg) no-repeat;
+    background-position: center;
+    background-size: 100px;
+    height: 50%;
+    text-align: center;
+}
+header .head h1 {
+    padding-top: 50px;
+}
+
+.box {
+    height: 400px;
+    width: 500px;
+    box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.box .top, .box .bottom {
+    padding: 50px;
+}
+.box .top {
+    position: relative;
+}
+.box .top .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box .top .price span {
+    font-size: 25px;
+    font-weight: 700;
+}
+.box .line-circle .line {
+    width: 100%;
+    height: 10px;
+    margin: 30px 0;
+    position: relative;
+}
+.box .line-circle .line input {
+    -webkit-appearance: none;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 50px;
+}
+.box .line-circle .line input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+    background: url(../images/icon-slider.svg) no-repeat;
+    background-position: center;
+    background-size: 25px;
+    border-radius: 50%;
+    background-color: rgb(66, 223, 66);
+}
+.box .line-circle .line input::-webkit-slider-thumb:hover {
+    background-color: hsl(174, 87%, 49%);
+}
+#progress-bar{
+    width: 50%;
+    height: 100%;
+    background-color: hsl(174, 77%, 80%);
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.box .bottom-line-circle {
+    display: flex;
+    margin-left: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+.box .bottom-line-circle p {
+    font-size: 10px;
+    color: hsl(225, 20%, 60%);
+}
+.box .bottom-line-circle .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.box .bottom-line-circle .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 70px;
+    height: 25px;
+    width: 50px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: hsl(174, 77%, 80%);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.discount {
+    padding: 5px;
+    background-color: hsl(14, 92%, 95%);
+    border-radius: 70px;
+    margin-left: 5px;
+    color: hsl(15, 100%, 70%);
+}
+.box .top::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: hsl(222, 7%, 72%);
+}
+.box .bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} 
+.box .bottom-line-circle .check {
+    height: 15px;
+    width: 35px;
+    border-radius: 70px;
+}
+.box .bottom-line-circle .check .background {
+    background-color: grey;
+}
+.box .bottom-line-circle .check .circle {
+    height: 20px;
+    width: 5px;
+    background-color: green;
+}
+.box .bottom ul {
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+.box .bottom button {
+    padding: 0 30px;
+    height: 40px;
+    border-radius: 80px;
+    border: none;
+    color: white;
+    background-color: hsl(227, 35%, 25%);
+    align-self: center;
+    cursor: pointer;
+}
+@media(max-width: 767px) {
+    body {
+        height: 800px;
+    }
+    .head {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .box {
+        width: 300px;
+        height: 500px;
+        font-size: 0.8em;
+    }
+    .box .bottom-line-circle {
+        display: flex;
+        margin-left: 0%;
+        justify-content: center;
+        align-items: center;
+    }
+    .box .line-circle .line {
+        width: 100%;
+        height: 10px;
+        margin: 30px 0;
+        margin-bottom: 80px;
+        position: relative;
+    }
+    .discount>span {
+        display: none;
+    }
+    .price {
+        position: absolute;
+        bottom: 100px;
+    }
+}
